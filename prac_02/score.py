@@ -1,9 +1,9 @@
-score = float(input("Enter score: "))
-if score < 0 or score > 100:
-    print("Invalid score")
-elif score >= 50:
-    print("Passable")
-elif score >= 90:
-    print("Excellent")
-else:
-    print("Bad")
+def evaluate_score(score):
+    if score < 0 or score > 100:
+        return "Invalid score"
+    elif score >= 90:
+        return "Excellent"
+    elif score >= 50:
+        return "Passable"
+    else:
+        return "Bad"
