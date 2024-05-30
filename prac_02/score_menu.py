@@ -26,3 +26,13 @@ def get_valid_score():
                 print("Invalid score. Please enter a score between 0 and 100.")
         except ValueError:
             print("Invalid input. Please enter a number.")
+
+def print_result(score):
+    result = evaluate_score(score)
+    print(result)
+
+def show_stars(score):
+    print('*' * int(score))
+
+def display_menu():
+    print(MENU)
