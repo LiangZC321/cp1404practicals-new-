@@ -24,3 +24,6 @@ What was the smallest number you could have seen, what was the largest?
 Smallest number: 2.5
 Largest number: 5.5
 """
+
+import random
+print(random.randint(1,100))
