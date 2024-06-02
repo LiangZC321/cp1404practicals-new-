@@ -8,3 +8,10 @@ file = open("name.txt", "r")
 name = file.read().strip()
 file.close()
 print(f"Hi {name}!")
+
+
+with open("numbers.txt", "r") as file:
+    first_number = int(file.readline().strip())
+    second_number = int(file.readline().strip())
+result = first_number + second_number
+print(result)
