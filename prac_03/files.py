@@ -15,3 +15,10 @@ with open("numbers.txt", "r") as file:
     second_number = int(file.readline().strip())
 result = first_number + second_number
 print(result)
+
+total = 0
+with open("numbers.txt", "r") as file:
+    for line in file:
+        total += int(line.strip())
+
+print(total)
