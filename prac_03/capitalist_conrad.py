@@ -16,7 +16,7 @@ MAX_PRICE = 1000.0
 INITIAL_PRICE = 10.0
 
 price = INITIAL_PRICE
-number_of_days = 0
+number_of_days = 0 #variable
 print(f"Starting price: ${price:,.2f}")
 
 while MIN_PRICE <= price <= MAX_PRICE:
