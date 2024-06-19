@@ -26,3 +26,15 @@ def organize_information(information):
         champions_to_times[champion] = champions_to_times.get(champion, 0) + 1
         champion_countries.add(country)
     return champions_to_times, sorted(champion_countries)
+
+def display_summy(champions_to_times, champion_countries):
+    print("Wimbledon Champions:")
+    for champions, times in champions_to_times.items():
+        print(f"{champions} {times}")
+
+    print("These countries have won Wimbledon:")
+    countries = ", ".join(champion_countries)
+    print(countries)
+
+
+main()
