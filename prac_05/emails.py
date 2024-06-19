@@ -18,3 +18,8 @@ def check_email(email):
         email = input("Email: ")
         return email
     return email
+
+def get_user_name(email):
+    users_information = email.split("@")[0].split('.')
+    user_name = ' '.join(information.title() for information in users_information)
+    return user_name
