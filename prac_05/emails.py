@@ -8,3 +8,6 @@ def main():
         user_name = get_user_name(email)
         check_user_name(user_name, email)
         email = input("Email: ")
+
+    for name, email in NAME_AND_EMAIL.items():
+        print(f"{name.title()} ({email})")
