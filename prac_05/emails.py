@@ -11,3 +11,10 @@ def main():
 
     for name, email in NAME_AND_EMAIL.items():
         print(f"{name.title()} ({email})")
+
+def check_email(email):
+    while "@" not in email:
+        print("Invalid email")
+        email = input("Email: ")
+        return email
+    return email
