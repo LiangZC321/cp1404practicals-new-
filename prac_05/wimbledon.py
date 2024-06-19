@@ -14,3 +14,15 @@ def read_file(filename):
         for row in reader:
             information.append(row)
     return information
+
+def organize_information(information):
+    champions_to_times = {}
+    champion_countries = set()
+
+    for row in information:
+        champion = row[2]
+        country = row[1]
+
+        champions_to_times[champion] = champions_to_times.get(champion, 0) + 1
+        champion_countries.add(country)
+    return champions_to_times, sorted(champion_countries)
