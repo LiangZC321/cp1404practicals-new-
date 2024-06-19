@@ -23,3 +23,19 @@ def get_user_name(email):
     users_information = email.split("@")[0].split('.')
     user_name = ' '.join(information.title() for information in users_information)
     return user_name
+
+def check_user_name(user_name, email):
+    name_confirmation = input(f"Is your name {user_name}?（Y/n) ").lower()
+    while name_confirmation == "n":
+        user_name = input("Name: ")
+        key = f"{user_name}"
+        value = f"{email}"
+        NAME_AND_EMAIL[key] = value
+        return NAME_AND_EMAIL
+    key = f"{user_name}"
+    value = f"{email}"
+    NAME_AND_EMAIL[key] = value
+    return NAME_AND_EMAIL
+
+
+main()
