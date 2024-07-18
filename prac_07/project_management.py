@@ -30,3 +30,13 @@ def main():
                 save_projects('projects.txt', projects)
             print("Thank you for using custom-built project management software.")
             break
+
+def load_projects(filename):
+    projects = []
+    with open(filename, 'r', newline='') as file:
+        reader = csv.reader(file, delimiter='\t')
+        next(reader)
+        for row in reader:
+            if row:
+                projects.append(Project(*row))
+    return projects
