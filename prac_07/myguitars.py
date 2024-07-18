@@ -25,7 +25,7 @@ def print_guitars(guitars):
         print(guitar)
 
 def add_new_guitars(guitars):
-    print("Enter your new guitars:")
+    print("Enter your new guitars(space to stop):")
     while True:
         name = input("Name: ")
         if name == "":
@@ -35,6 +35,11 @@ def add_new_guitars(guitars):
         guitars.append(Guitar(name, year, cost))
     return guitars
 
+def write_guitars(filename, guitars):
+    with open(filename, 'w', newline='') as file:
+        writer = csv.writer(file)
+        for guitar in guitars:
+            writer.writerow([guitar.name, guitar.year, guitar.cost])
 
 
 
