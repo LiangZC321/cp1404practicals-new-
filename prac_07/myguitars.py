@@ -1,22 +1,28 @@
+import csv
 from guitar import Guitar
 
-
 def main():
+    filename = "guitars.csv"
+    guitars = read_guitars(filename)
+
+    guitars.sort()
+    print_guitars(guitars)
+
+def read_guitars(filename):
     guitars = []
-    in_file = open('guitars.csv', 'r')
-    in_file.readline()
-    for line in in_file:
-        parts = line.strip().split(',')
-        guitar = Guitar(parts[0], parts[1], float(parts[2]))
-        guitars.append(guitar)
-    in_file.close()
+    with open(filename, 'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            if row:
+                name, year, cost = row
+                guitars.append(Guitar(name, int(year), float(cost)))
+    return guitars
 
-    guitars.sort()
-
+def print_guitars(guitars):
     for guitar in guitars:
         print(guitar)
 
-    add_guitar(guitars)
-    guitars.sort()
-    for guitar in guitars:
-        print(guitar)
+
+
+
+main()
