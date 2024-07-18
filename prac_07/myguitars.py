@@ -4,9 +4,11 @@ from guitar import Guitar
 def main():
     filename = "guitars.csv"
     guitars = read_guitars(filename)
+    guitars = add_new_guitars(guitars)
 
     guitars.sort()
     print_guitars(guitars)
+    write_guitars(filename, guitars)
 
 def read_guitars(filename):
     guitars = []
@@ -21,6 +23,17 @@ def read_guitars(filename):
 def print_guitars(guitars):
     for guitar in guitars:
         print(guitar)
+
+def add_new_guitars(guitars):
+    print("Enter your new guitars:")
+    while True:
+        name = input("Name: ")
+        if name == "":
+            break
+        year = int(input("Year: "))
+        cost = float(input("Cost: $"))
+        guitars.append(Guitar(name, year, cost))
+    return guitars
 
 
 
