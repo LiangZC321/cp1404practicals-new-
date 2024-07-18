@@ -29,7 +29,7 @@ def main():
         # Construct a ProgrammingLanguage object using the elements
         # year should be an int
         response = parts[4]
-        language = ProgrammingLanguage(parts[0], parts[1], reflection, response, int(parts[3]))
+        language = ProgrammingLanguage(parts[0], parts[1], reflection, int(parts[3]), response)
         # Add the language we've just constructed to the list
         languages.append(language)
     # Close the file as soon as we've finished reading it
