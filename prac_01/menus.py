@@ -19,23 +19,42 @@ MENU = """
 (G)oodbye
 (Q)uit
 """
-def main():
-    name = input("Enter name: ")
-    display_menu = True
-    while display_menu:
-        print(MENU)
-        choice = input(">>> ").upper()
+# def main():
+#     name = input("Enter name: ")
+#     display_menu = True
+#     while display_menu:
+#         print(MENU)
+#         choice = input(">>> ").upper()
+#
+#         if choice == "Q":
+#             print("Finished.")
+#             display_menu = False
+#         elif choice == "H":
+#             print("Hello", name)
+#         elif choice == "G":
+#             print("Goodbye", name)
+#         else:
+#             print("Invalid choice")
+#
+#
+# if __name__ == "__main__":
+#     main()
 
-        if choice == "Q":
-            print("Finished.")
-            display_menu = False
-        elif choice == "H":
-            print("Hello", name)
-        elif choice == "G":
-            print("Goodbye", name)
-        else:
-            print("Invalid choice")
+name = input("enter ur name: ").lower()
+print(MENU)
+choice = input("\n>>> ").lower()
+while choice != "q":
+    if choice == "h":
+        print("Hello!")
+    elif choice == "g":
+        print("goodbye")
+    else:
+        print("invalid")
+    print(MENU)
+    choice = input("\n>>> ").lower()
+
+print("all right")
 
 
-if __name__ == "__main__":
-    main()
+
+
