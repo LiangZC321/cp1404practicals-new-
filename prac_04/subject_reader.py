@@ -51,9 +51,9 @@ CP1404 is taught by Alan Turing  and has  98 students
     """
     with open(FILENAME, "r") as file:
         for line in file:
-            line.strip()
+            line = line.strip()
             items_in_line = line.split(",")
-            print(f"{items_in_line[0]} is taught by {items_in_line[1]} and has {items_in_line[2]} students")
+            print(f"{items_in_line[0]} is taught by {items_in_line[1]:>12} and has {items_in_line[2]:>3} students")
 
 
 
