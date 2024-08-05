@@ -47,6 +47,17 @@ def run_tests():
     # using the value passed in or the default
     # You should test both of these
     test_car = Car(fuel=10)
+    def test_car_fuel():
+        car_with_fuel = Car('WithFuel', 10)
+        assert car_with_fuel.fuel == 10, "Initial fuel not set correctly."
+
+        car_without_fuel = Car('WithoutFuel')
+        assert car_without_fuel.fuel == 0, "Default fuel should be 0."
+
+        print("All test cases passed for Car fuel property")
+
+
+    test_car_fuel()
 
 
 run_tests()
