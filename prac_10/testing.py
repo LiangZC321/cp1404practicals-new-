@@ -85,3 +85,16 @@ run_tests()
 # and one more you decide (one that is valid!)
 # test this and watch the tests fail
 # then write the body of the function so that the tests pass
+def format_phrase(words):
+    if words[0].islower():
+        words = words[0].upper() + words[1:]
+    if words[-1] != ".":
+        words += "."
+    return words
+
+
+assert format_phrase('hello') == 'Hello.'
+
+assert format_phrase('It is an ex parrot.') == 'It is an ex parrot.'
+
+assert format_phrase('Cars work.') == 'Cars work.'
