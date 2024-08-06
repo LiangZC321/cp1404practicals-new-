@@ -1,0 +1,90 @@
+BoxLayout:
+  orientation: 'horizontal'
+
+    # Left column for inputs and sorting
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_x: 0.3
+        padding: 10
+        spacing: 10
+        Label:
+            text:'Sort :'
+            size_hint_y: None
+        Spinner:
+            id: sort_spinner
+            text: 'Sort by ...'
+            values: ['Title', 'Category', 'Year']
+            on_text: app.sort_movies()
+
+        Label:
+            text: 'New movie'
+            size_hint_y: None
+
+        Label:
+            text: 'Title :'
+            size_hint_y: None
+            height: 55
+
+        TextInput:
+            id: title_input
+            size_hint_y: None
+            height: 50
+
+        Label:
+            text: 'Category :'
+            size_hint_y: None
+            height: 55
+
+        TextInput:
+            id: category_input
+            size_hint_y: None
+            height: 50
+
+        Label:
+            text: 'Year :'
+            size_hint_y: None
+            height: 55
+
+        TextInput:
+            id: year_input
+            size_hint_y: None
+            height: 50
+
+        Button:
+            text: 'Add Movie'
+            on_release: app.add_movie()
+            size_hint_y: None
+            height: 50
+
+        Button:
+            text: 'Clear'
+            background_color: [0.5, 0.5, 0.5, 1]
+            on_press: app.clear_fields()
+            size_hint_y: None
+            height: 50
+
+    # Right column for displaying status and messages
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_x: 0.8
+        padding: 10
+        spacing: 10
+
+        Label:
+            id: status_label
+            text: 'Still to watch: 3. Already watched: 2'
+            size_hint_y: None
+            height: 50
+
+        ScrollView:
+            GridLayout:
+                id: movie_list
+                cols: 1
+                size_hint_y: None
+                height: 550  # Adjusted to be within the parent container
+
+        Label:
+            id: message_label
+            text: 'Welcome to Movies2See :)'
+            size_hint_y: None
+            height: 50
